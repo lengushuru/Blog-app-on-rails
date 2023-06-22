@@ -72,7 +72,7 @@ In order to run this project you need [Ruby](https://www.ruby-lang.org/en/), [Ra
 Clone this repository to your desired folder:
 
 ```sh
-  git clone <link to this repository >
+  git clone https://github.com/lengushuru/Rails-blog-app.git
 ```
 
 ```sh
