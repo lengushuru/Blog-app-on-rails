@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Software Engineer From Morocco .',
+  user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'i am developer',
                      posts_counter: 0)
-  subject = user.posts.new(title: 'Post 1', text: 'This is post 1', comments_counter: 0, likes_counters: 0, author_id: 11)
+  subject = user.posts.new(title: 'Post 1', text: 'This is post 1', comments_counter: 0, likes_counters: 0,
+                           author_id: 11)
 
   before { subject.save }
 
@@ -36,12 +37,4 @@ RSpec.describe Post, type: :model do
     subject.likes_counters = -2
     expect(subject).to_not be_valid
   end
-
-#   describe '#update_user_posts_counter' do
-#     it 'user_counter' do
-#       expect(subject.author.posts_counter).to eq(1)
-#       subject.update_user_posts_counter
-#       expect(subject.author.posts_counter).to eq(2)
-#     end
-# end 
 end

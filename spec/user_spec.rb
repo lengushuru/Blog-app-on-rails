@@ -26,7 +26,5 @@ RSpec.describe User, type: :model do
     let!(:post2) { user.posts.create(title: 'Post 2', text: 'My post 2', comments_counter: 0, likes_counters: 0) }
     let!(:post3) { user.posts.create(title: 'Post 3', text: 'My post 3', comments_counter: 0, likes_counters: 0) }
     let!(:post4) { user.posts.create(title: 'Post 4', text: 'My post 4', comments_counter: 0, likes_counters: 0) }
-
-  
   end
 end
