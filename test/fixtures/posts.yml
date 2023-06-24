@@ -1,19 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  AuthorId: 1
+  author,foreign_key: MyString
+  'true': MyString
   Title: MyString
   Text: MyText
-  CreatedAt: 2023-06-21 12:32:12
-  UpdatedAt: 2023-06-21 12:32:12
   CommentsCounter: 1
   LikesCounter: 1
 
 two:
-  AuthorId: 1
+  author,foreign_key: MyString
+  'true': MyString
   Title: MyString
   Text: MyText
-  CreatedAt: 2023-06-21 12:32:12
-  UpdatedAt: 2023-06-21 12:32:12
   CommentsCounter: 1
   LikesCounter: 1

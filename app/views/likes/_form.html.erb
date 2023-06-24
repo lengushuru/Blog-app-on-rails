@@ -12,23 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :AuthorId, style: "display: block" %>
-    <%= form.number_field :AuthorId %>
+    <%= form.label :author_id, style: "display: block" %>
+    <%= form.text_field :author_id %>
   </div>
 
   <div>
-    <%= form.label :PostId, style: "display: block" %>
-    <%= form.number_field :PostId %>
+    <%= form.label :post_id, style: "display: block" %>
+    <%= form.text_field :post_id %>
   </div>
 
   <div>
-    <%= form.label :UpdatedAt, style: "display: block" %>
-    <%= form.datetime_field :UpdatedAt %>
-  </div>
-
-  <div>
-    <%= form.label :CreatedAt, style: "display: block" %>
-    <%= form.datetime_field :CreatedAt %>
+    <%= form.label :timestamps, style: "display: block" %>
+    <%= form.text_field :timestamps %>
   </div>
 
   <div>

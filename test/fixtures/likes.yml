@@ -1,13 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  AuthorId: 1
-  PostId: 1
-  UpdatedAt: 2023-06-21 12:34:50
-  CreatedAt: 2023-06-21 12:34:50
+  author: one
+  post: one
+  timestamps: MyString
 
 two:
-  AuthorId: 1
-  PostId: 1
-  UpdatedAt: 2023-06-21 12:34:50
-  CreatedAt: 2023-06-21 12:34:50
+  author: two
+  post: two
+  timestamps: MyString

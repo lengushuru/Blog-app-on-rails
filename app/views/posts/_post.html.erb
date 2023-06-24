@@ -1,7 +1,12 @@
 <div id="<%= dom_id post %>">
   <p>
-    <strong>Authorid:</strong>
-    <%= post.AuthorId %>
+    <strong>Author,foreign key:</strong>
+    <%= post.author,foreign_key %>
+  </p>
+
+  <p>
+    <strong>True:</strong>
+    <%= post.true %>
   </p>
 
   <p>
@@ -12,16 +17,6 @@
   <p>
     <strong>Text:</strong>
     <%= post.Text %>
-  </p>
-
-  <p>
-    <strong>Createdat:</strong>
-    <%= post.CreatedAt %>
-  </p>
-
-  <p>
-    <strong>Updatedat:</strong>
-    <%= post.UpdatedAt %>
   </p>
 
   <p>

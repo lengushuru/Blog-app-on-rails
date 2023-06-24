@@ -12,8 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :AuthorId, style: "display: block" %>
-    <%= form.number_field :AuthorId %>
+    <%= form.label :author,foreign_key, style: "display: block" %>
+    <%= form.text_field :author,foreign_key %>
+  </div>
+
+  <div>
+    <%= form.label :true, style: "display: block" %>
+    <%= form.text_field :true %>
   </div>
 
   <div>
@@ -24,16 +29,6 @@
   <div>
     <%= form.label :Text, style: "display: block" %>
     <%= form.text_area :Text %>
-  </div>
-
-  <div>
-    <%= form.label :CreatedAt, style: "display: block" %>
-    <%= form.datetime_field :CreatedAt %>
-  </div>
-
-  <div>
-    <%= form.label :UpdatedAt, style: "display: block" %>
-    <%= form.datetime_field :UpdatedAt %>
   </div>
 
   <div>
