@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 <a name="readme-top"></a>
 
 ## 📗 Table of Contents
@@ -170,4 +167,3 @@ I would like to thank microverse for giving me this opprtunity.
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
->>>>>>> main
