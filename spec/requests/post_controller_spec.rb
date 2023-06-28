@@ -15,7 +15,7 @@ RSpec.describe 'Posts', type: :request do
     it 'renders the index template' do
       expect(response).to render_template('index')
     end
-    it 'include the list of users' do
+    it 'include the list of posts' do
       expect(response.body).to include('All Posts')
     end
   end
