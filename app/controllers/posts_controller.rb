@@ -1,9 +1,5 @@
 class PostsController < ApplicationController
-  def index
-    render plain: 'Here is a list of posts'
-  end
+  def index; end
 
-  def show
-    render plain: 'Here is a single Post'
-  end
+  def show; end
 end
