@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_24_204323) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_26_120150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_204323) do
   create_table "likes", force: :cascade do |t|
     t.bigint "author_id", null: false
     t.bigint "post_id", null: false
-    t.string "timestamps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_likes_on_author_id"
@@ -38,11 +37,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_204323) do
     t.bigint "author_id", null: false
     t.string "title", null: false
     t.text "text"
-    t.integer "comments_counter"
-    t.integer "likes_counters"
+    t.integer "comments_counter", default: 0
+    t.integer "likes_counters", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
@@ -54,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_204323) do
     t.datetime "CreatedAt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "posts_counter"
+    t.integer "posts_counter", default: 0
   end
 
   add_foreign_key "comments", "posts"
@@ -62,4 +60,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_204323) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users", column: "author_id"
   add_foreign_key "posts", "users", column: "author_id"
+  add_foreign_key "posts", "users", column: "author_id", name: "fk_posts_author_id", on_delete: :cascade
 end

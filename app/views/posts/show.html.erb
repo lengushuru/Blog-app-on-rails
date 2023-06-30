@@ -1,1 +1,14 @@
+
 <h1>Post</h1>
+
+<div>
+  <h2>Post: <%= @post.title %></h2>
+  <h3>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counters %></h3>
+  <p><%= @post.text %></p>
+</div>
+
+<div>
+  <% @post.latest_commments.each do |comment| %>
+    <h3><%= comment.author.name %>: <%= comment.text %></h3>
+  <% end %>
+</div>
