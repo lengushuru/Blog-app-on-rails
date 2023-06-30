@@ -1,1 +1,35 @@
 <h1>All Posts</h1>
+<div class="user-li">
+<div class="user-card">
+  <div class="image-container">
+      <%= image_tag(@user.photo, width: 100)%>
+  </div>
+
+  <h2><%= @user.name%></h2>
+  <p class="post-count"><%= @user.posts_counter%></p>
+</div>
+</div>
+
+<% @posts.each do |post| %>
+ <div>
+ <%= link_to user_post_path(@user.id, post.id) do %>
+ <h2><%= post.title%></h2>
+ <p>lengushuru testing</p>
+ <% end %>
+ <p><%= post.text %></p>
+ <h3>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counters %><h3>
+  </div>
+  <div>
+  <% post.latest_commments.each do |comment|%>
+    <h3><%= comment.author.name %><%= comment.text %></h3>
+    <% end %>
+    </div>
+  </div>
+  <% end%>
+
+  <button>
+    Pagination
+ 
+  </button>
+</div>
+ 
