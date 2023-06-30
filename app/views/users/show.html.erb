@@ -1,1 +1,19 @@
-<h1>User</h1>
+<a href="/">back</a>
+<h1>User Details</h1>
+<% if @user.photo.present? %>
+<div><%= image_tag(@user.photo, width: 100) %></div>
+<% end %> 
+<h2><%= @user.name%><h2>
+<p>Number of posts: <%= @user.posts_counter %></p>
+<p><strong>Bio:</strong> <%= @user.bio %></p>
+
+<% @user.latest_posts.each do |post|%>
+<div>
+<h2><%= post.title %></h2>
+<p><%= post.text%></p>
+<p>Comment :<%= post.comments_counter %> , Likes :<%= post.likes_counters %></p>
+</div>
+<% end%>
+    <button>
+        <%= link_to "See all posts", user_posts_path(@user) %>
+    </button>
