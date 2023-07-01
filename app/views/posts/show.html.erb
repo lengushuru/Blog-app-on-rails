@@ -1,10 +1,24 @@
-
 <h1>Post</h1>
+
+<div>
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>">
+      <%= value %>
+    </div>
+  <% end %>
+</div>
 
 <div>
   <h2>Post: <%= @post.title %></h2>
   <h3>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counters %></h3>
   <p><%= @post.text %></p>
+  <div>
+    <%= form_with(model: @post, url: like_user_post_path(user_id: @current_user.id, id: @post.id), method: :post, local: true) do |form| %>
+      <%= form.button type: :submit, class: 'like-button' do %>
+        Add Like
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div>
@@ -12,3 +26,5 @@
     <h3><%= comment.author.name %>: <%= comment.text %></h3>
   <% end %>
 </div>
+
+<button><%= link_to 'Add Comment', new_user_post_comment_path(user_id: @current_user.id, post_id: @post.id) %></button>
