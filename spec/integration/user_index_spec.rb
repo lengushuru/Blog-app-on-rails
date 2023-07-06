@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe 'User page', type: :system do
   describe 'User show' do
     before(:each) do
@@ -23,6 +24,7 @@ RSpec.describe 'User page', type: :system do
       @post8 = Post.create!(user: @user2, title: 'Hi', text: 'This is another another another post',
                             comments_counter: 0, likes_counters: 0)
     end
+
     it 'shows user first user' do
       visit user_path(@user1)
       expect(page).to have_selector("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
@@ -30,10 +32,12 @@ RSpec.describe 'User page', type: :system do
       expect(page).to have_content(@user1.bio)
       expect(page).to have_content('Number of posts: 4')
       expect(page).to have_link('See all posts')
+
       @user1.latest_posts.each do |post|
         expect(page).to have_content(post.text)
       end
     end
+
     it 'user clicks on See all posts button and goes to user posts page first user' do
       visit user_path(@user1)
       click_link 'See all posts'
@@ -43,6 +47,7 @@ RSpec.describe 'User page', type: :system do
         expect(page).to have_content(post.text)
       end
     end
+
     it 'shows user second user' do
       visit user_path(@user2)
       expect(page).to have_selector("img[src='https://unsplash.com/photos/zedf']")
@@ -50,10 +55,12 @@ RSpec.describe 'User page', type: :system do
       expect(page).to have_content(@user2.bio)
       expect(page).to have_content('Number of posts: 4')
       expect(page).to have_link('See all posts')
+
       @user2.latest_posts.each do |post|
         expect(page).to have_content(post.text)
       end
     end
+
     it 'user clicks on See all posts button and goes to user posts page second user' do
       visit user_path(@user2)
       click_link 'See all posts'
@@ -65,9 +72,3 @@ RSpec.describe 'User page', type: :system do
     end
   end
 end
-UnsplashUnsplash
-Photo by Clément M. on Unsplash
-You can help and support me via my description! (Paypal)
-Instagram : @clvmentm
-Facebook Page : www.facebook.com/CMReflections/
-– Download this photo by Clément M. on Unsplash (82 kB)

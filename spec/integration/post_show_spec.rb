@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Post show page', type: :system do
   let!(:users) do
     User.create!([{ name: 'kimani', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Software Engineer.',
-                   posts_counter: 0 },
-                 { name: 'charles', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'teacher from kakamega.',
-                   posts_counter: 0 },
-                 { name: 'patel', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from kenya.',
-                   posts_counter: 0 }])
+                    posts_counter: 0 },
+                  { name: 'charles', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'teacher from kakamega.',
+                    posts_counter: 0 },
+                  { name: 'patel', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from kenya.',
+                    posts_counter: 0 }])
   end
 
   let!(:posts) do

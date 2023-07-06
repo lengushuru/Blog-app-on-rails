@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   let(:user) { User.create!(name: 'lengushuru Charles', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Electrical engineer.', posts_counter: 0) }
   let(:post) do
-    Post.create!(user: user, title: 'My first post', text: 'This is my first post.', comments_counter: 0,
+    Post.create!(user:, title: 'My first post', text: 'This is my first post.', comments_counter: 0,
                  likes_counters: 0)
   end
   describe 'GET /index' do
