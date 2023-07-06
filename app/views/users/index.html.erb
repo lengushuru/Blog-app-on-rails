@@ -1,19 +1,12 @@
-<section class="users-container">
-<ul>
-<% @users.each do |user|%>
-<li class="user-li">
-<a href="<%= user_path(:id => user.id) %>">
-  <div class="user-card">
-    <div class="image-container">
-    <img src = <%= user.photo %>>
-    </div>
-    <h2><%= user.name %></h2>
+<h1>All Users</h1>
+<% @users.each do |user| %>
+  <div>
+  <% if user.photo.present? %>
+    <div><%= image_tag(user.photo, width:200) %></div>
+  <% end %>  
+   <%= link_to(user_path(user)) do %>
+  <div><%= user.name %></div>
+  <% end %>
+  <div>Number of Posts: <%= user.posts_counter %></div>
   </div>
-  <p class="post-count">Number of Posts:<%= user.posts_counter%></p>
-  </a>
-</li>
 <% end %>
-
-</ul>
-
-</section>
