@@ -36,7 +36,7 @@ RSpec.describe 'User page', type: :system do
       @user1.latest_posts.each do |post|
         expect(page).to have_content(post.text)
       end
-    end 
+    end
 
     it 'user clicks on See all posts button and goes to user posts page first user' do
       visit users_path(@user1)

@@ -11,7 +11,7 @@ RSpec.describe 'Post show page', type: :system do
   end
 
   let!(:posts) do
-    Post.create!([{ user: users[0], title: "First Post", text: 'My first post',
+    Post.create!([{ user: users[0], title: 'First Post', text: 'My first post',
                     likes_counters: 0 },
                   { user: users[1], title: 'Second Post', text: 'My Second post',
                     likes_counters: 0 },
