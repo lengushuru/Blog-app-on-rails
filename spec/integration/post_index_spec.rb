@@ -9,11 +9,11 @@ RSpec.describe 'Post index page', type: :feature do
                     bio: 'Software Engineer from USA', posts_counter: 0}])
     end
     let!(:posts) do
-        Post.create!([{ author: users[0], title: 'First Post', text: 'My first post', comments_counter: 0,
+        Post.create!([{ user: users[0], title: 'First Post', text: 'My first post', comments_counter: 0,
                         likes_counters: 0 },
-                      { author: users[1], title: 'Second Post', text: 'My Second post', comments_counter: 0,
+                      { user: users[1], title: 'Second Post', text: 'My Second post', comments_counter: 0,
                         likes_counters: 0 },
-                      { author: users[2], title: 'Third Post', text: 'My Third post', comments_counter: 0,
+                      { user: users[2], title: 'Third Post', text: 'My Third post', comments_counter: 0,
                         likes_counters: 0 }])
     end
 
