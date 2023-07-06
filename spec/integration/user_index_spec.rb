@@ -26,7 +26,7 @@ RSpec.describe 'User page', type: :system do
     end
 
     it 'shows user first user' do
-      visit user_path(@user1)
+      visit users_path(@user1)
       expect(page).to have_selector("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
       expect(page).to have_content(@user1.name)
       expect(page).to have_content(@user1.bio)
@@ -36,10 +36,10 @@ RSpec.describe 'User page', type: :system do
       @user1.latest_posts.each do |post|
         expect(page).to have_content(post.text)
       end
-    end
+    end 
 
     it 'user clicks on See all posts button and goes to user posts page first user' do
-      visit user_path(@user1)
+      visit users_path(@user1)
       click_link 'See all posts'
       expect(page).to have_current_path user_posts_path(@user1)
       expect(page).to have_content(@user1.name)
@@ -49,7 +49,7 @@ RSpec.describe 'User page', type: :system do
     end
 
     it 'shows user second user' do
-      visit user_path(@user2)
+      visit users_path(@user2)
       expect(page).to have_selector("img[src='https://unsplash.com/photos/zedf']")
       expect(page).to have_content(@user2.name)
       expect(page).to have_content(@user2.bio)
@@ -62,7 +62,7 @@ RSpec.describe 'User page', type: :system do
     end
 
     it 'user clicks on See all posts button and goes to user posts page second user' do
-      visit user_path(@user2)
+      visit users_path(@user2)
       click_link 'See all posts'
       expect(page).to have_content(@user2.name)
       expect(page).to have_current_path user_posts_path(@user2)

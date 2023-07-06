@@ -7,21 +7,21 @@ RSpec.describe 'User page', type: :system do
                             bio: 'Engineer from china.', posts_counter: 0)
       @user2 = User.create!(name: 'kevin', photo: 'https://unsplash.com/photos/zedf', bio: 'system admin.',
                             posts_counter: 0)
-      @post1 = Post.create!(author: @user1, title: 'Hello', text: 'This is a post', comments_counter: 0,
+      @post1 = Post.create!(user: @user1, title: 'Hello', text: 'This is a post', comments_counter: 0,
                             likes_counters: 0)
-      @post2 = Post.create!(author: @user2, title: 'Hello', text: 'This is a post', comments_counter: 0,
+      @post2 = Post.create!(user: @user2, title: 'Hello', text: 'This is a post', comments_counter: 0,
                             likes_counters: 0)
-      @post3 = Post.create!(author: @user1, title: 'Hello', text: 'This is another post', comments_counter: 0,
+      @post3 = Post.create!(user: @user1, title: 'Hello', text: 'This is another post', comments_counter: 0,
                             likes_counters: 0)
-      @post4 = Post.create!(author: @user2, title: 'Hello', text: 'This is another post', comments_counter: 0,
+      @post4 = Post.create!(user: @user2, title: 'Hello', text: 'This is another post', comments_counter: 0,
                             likes_counters: 0)
-      @post5 = Post.create!(author: @user1, title: 'Hello', text: 'This is another post', comments_counter: 0,
+      @post5 = Post.create!(user: @user1, title: 'Hello', text: 'This is another post', comments_counter: 0,
                             likes_counters: 0)
-      @post6 = Post.create!(author: @user2, title: 'Hello', text: 'This is another another post', comments_counter: 0,
+      @post6 = Post.create!(user: @user2, title: 'Hello', text: 'This is another another post', comments_counter: 0,
                             likes_counters: 0)
-      @post7 = Post.create!(author: @user1, title: 'Hello', text: 'This is another another another post',
+      @post7 = Post.create!(user: @user1, title: 'Hello', text: 'This is another another another post',
                             comments_counter: 0, likes_counters: 0)
-      @post8 = Post.create!(author: @user2, title: 'Hi', text: 'This is another another another post',
+      @post8 = Post.create!(user: @user2, title: 'Hi', text: 'This is another another another post',
                             comments_counter: 0, likes_counters: 0)
     end
 
