@@ -125,6 +125,18 @@ To run tests, run the following command:
 - Twitter: [@lengushuru](https://twitter.com/lengush)
 - LinkedIn: [Lengushuru Charles](https://linkedin.com/in/lengushuru)
 
+ 👤 **Okpah Igbo**
+
+- GitHub: [@david30-maker](https://github.com/david30-maker)
+- Twitter: [@davidigbo1](https://twitter.com/davidigbo1)
+- LinkedIn: [davidigbo/](https://www.linkedin.com/in/davidigbo/)
+
+👤 **Taiwo Enoch**
+
+- GitHub: [@TaiwoEnoch](https://github.com/TaiwoEnoch)
+- Twitter: [@taiwoenoch4](https://twitter.com/taiwoenoch4)
+- LinkedIn: [@taiwo01/](https://www.linkedin.com/in/taiwo01/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
