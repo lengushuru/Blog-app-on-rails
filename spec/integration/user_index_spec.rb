@@ -5,7 +5,8 @@ RSpec.describe 'User page', type: :system do
     before(:each) do
       @user1 = User.create!(name: 'lengushuru', photo: 'https://unsplash.com/photos/zedf',
                             bio: 'Electrical engineer and a software dev.', posts_counter: 0)
-      @user2 = User.create!(name: 'Patel', photo: 'https://unsplash.com/photos/zedf', bio: 'database admin at dkight kenya.',
+      @user2 = User.create!(name: 'Patel', photo: 'https://unsplash.com/photos/zedf',
+                            bio: 'database admin at dkight kenya.',
                             posts_counter: 0)
       @post1 = Post.create!(user: @user1, title: 'Hello', text: 'This is a post', comments_counter: 0,
                             likes_counters: 0)
