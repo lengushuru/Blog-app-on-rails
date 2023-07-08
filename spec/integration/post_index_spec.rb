@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Post index page', type: :feature do
   let!(:users) do
-    User.create([{ name: 'Walid', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                   bio: 'Software Engineer from Morocco', posts_counter: 0 },
-                 { name: 'Nada', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                   bio: 'Software Engineer from Turkey', posts_counter: 0 },
-                 { name: 'Jordan', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                   bio: 'Software Engineer from USA', posts_counter: 0 }])
+    User.create([{ name: 'captain', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                   bio: 'Software Engineer from nairobi', posts_counter: 0 },
+                 { name: 'patel', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                   bio: 'assistant database admin at dlight', posts_counter: 0 },
+                 { name: 'charles', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                   bio: 'Fullstack developer', posts_counter: 0 }])
   end
   let!(:posts) do
     Post.create!([{ user: users[0], title: 'First Post', text: 'My first post', comments_counter: 0,

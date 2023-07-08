@@ -1,74 +1,53 @@
 require 'rails_helper'
 
 RSpec.describe 'User page', type: :system do
-  describe 'User show' do
+  describe 'User index' do
     before(:each) do
-      @user1 = User.create!(name: 'Nadia', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                            bio: 'Teacher from Canada.', posts_counter: 0)
-      @user2 = User.create!(name: 'Sirag', photo: 'https://unsplash.com/photos/zedf', bio: 'Developer from turkey.',
+      @user1 = User.create!(name: 'lengushuru', photo: 'https://unsplash.com/photos/zedf',
+                            bio: 'Electrical engineer and a software dev.', posts_counter: 0)
+      @user2 = User.create!(name: 'Patel', photo: 'https://unsplash.com/photos/zedf', bio: 'database admin at dkight kenya.',
                             posts_counter: 0)
       @post1 = Post.create!(user: @user1, title: 'Hello', text: 'This is a post', comments_counter: 0,
                             likes_counters: 0)
       @post2 = Post.create!(user: @user2, title: 'Hello', text: 'This is a post', comments_counter: 0,
                             likes_counters: 0)
-      @post3 = Post.create!(user: @user1, title: 'Hello', text: 'This is another post', comments_counter: 0,
+      @post3 = Post.create!(user: @user1, title: 'Hello', text: 'This is a post', comments_counter: 0,
                             likes_counters: 0)
-      @post4 = Post.create!(user: @user2, title: 'Hello', text: 'This is another post', comments_counter: 0,
+      @post4 = Post.create!(user: @user2, title: 'Hello', text: 'This is last post', comments_counter: 0,
                             likes_counters: 0)
-      @post5 = Post.create!(user: @user1, title: 'Hello', text: 'This is another another post', comments_counter: 0,
-                            likes_counters: 0)
-      @post6 = Post.create!(user: @user2, title: 'Hello', text: 'This is another another post', comments_counter: 0,
-                            likes_counters: 0)
-      @post7 = Post.create!(user: @user1, title: 'Hello', text: 'This is another another another post',
-                            comments_counter: 0, likes_counters: 0)
-      @post8 = Post.create!(user: @user2, title: 'Hi', text: 'This is another another another post',
-                            comments_counter: 0, likes_counters: 0)
     end
 
-    it 'shows user first user' do
-      visit users_path(@user1)
-      expect(page).to have_selector("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
+    it 'shows all users' do
+      visit users_path
+      expect(page).to have_content(@user1.name)
+      expect(page).to have_content(@user2.name)
+    end
+
+    it 'shows users picture' do
+      visit users_path
+      expect(page).to have_selector("img[src='https://unsplash.com/photos/zedf']")
+    end
+
+    it 'shows users post_counter' do
+      visit users_path
+      expect(page).to have_content('Number of Posts: 2')
+      expect(page).to have_content('Number of Posts: 2')
+    end
+
+    it 'user clicks on first user name and goes to user page' do
+      visit users_path
+      click_on @user1.name
+      expect(page).to have_current_path user_path(@user1)
       expect(page).to have_content(@user1.name)
       expect(page).to have_content(@user1.bio)
-      expect(page).to have_content('Number of posts: 4')
-      expect(page).to have_link('See all posts')
-
-      @user1.latest_posts.each do |post|
-        expect(page).to have_content(post.text)
-      end
     end
 
-    it 'user clicks on See all posts button and goes to user posts page first user' do
-      visit users_path(@user1)
-      click_link 'See all posts'
-      expect(page).to have_current_path user_posts_path(@user1)
-      expect(page).to have_content(@user1.name)
-      @user1.posts.each do |post|
-        expect(page).to have_content(post.text)
-      end
-    end
-
-    it 'shows user second user' do
-      visit users_path(@user2)
-      expect(page).to have_selector("img[src='https://unsplash.com/photos/zedf']")
+    it 'user clicks on second user name and goes to user page' do
+      visit users_path
+      click_on @user2.name
+      expect(page).to have_current_path user_path(@user2)
       expect(page).to have_content(@user2.name)
       expect(page).to have_content(@user2.bio)
-      expect(page).to have_content('Number of posts: 4')
-      expect(page).to have_link('See all posts')
-
-      @user2.latest_posts.each do |post|
-        expect(page).to have_content(post.text)
-      end
-    end
-
-    it 'user clicks on See all posts button and goes to user posts page second user' do
-      visit users_path(@user2)
-      click_link 'See all posts'
-      expect(page).to have_content(@user2.name)
-      expect(page).to have_current_path user_posts_path(@user2)
-      @user2.posts.each do |post|
-        expect(page).to have_content(post.text)
-      end
     end
   end
 end

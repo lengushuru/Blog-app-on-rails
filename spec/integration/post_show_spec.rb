@@ -26,16 +26,16 @@ RSpec.describe 'Post show page', type: :system do
     end
 
     it 'shows how many comments a post has' do
-      Comment.create!(user: users[0], post: posts[0], text: 'Very Good')
-      Comment.create!(user: users[1], post: posts[0], text: 'Very Good')
-      Comment.create!(user: users[2], post: posts[0], text: 'Very Good')
+      Comment.create!(author: users[0], post: posts[0], text: 'Very Good')
+      Comment.create!(author: users[1], post: posts[0], text: 'Very Good')
+      Comment.create!(author: users[2], post: posts[0], text: 'Very Good')
       visit user_post_path(users[0], posts[0])
       expect(page).to have_content(posts[0].comments_counter)
     end
     it 'shows how many likes a post has' do
-      Like.create!(user: users[0], post: posts[0])
-      Like.create!(user: users[1], post: posts[0])
-      Like.create!(user: users[2], post: posts[0])
+      Like.create!(author: users[0], post: posts[0])
+      Like.create!(author: users[1], post: posts[0])
+      Like.create!(author: users[2], post: posts[0])
       visit user_post_path(users[0], posts[0])
       expect(page).to have_content(posts[0].likes_counters)
     end
@@ -46,17 +46,17 @@ RSpec.describe 'Post show page', type: :system do
     end
 
     it 'shows the username of each commentor' do
-      Comment.create!(user: users[0], post: posts[0], text: 'Very nice')
+      Comment.create!(author: users[0], post: posts[0], text: 'Very nice')
       visit user_post_path(users[0], posts[0])
 
       posts[0].comments.each do |comment|
-        expect(page).to have_content(comment.user.name)
+        expect(page).to have_content(comment.author.name)
       end
     end
 
     it 'shows the comment each commentor left' do
-      Comment.create!(user: users[0], post: posts[0], text: 'Very nice')
-      Comment.create!(user: users[2], post: posts[0], text: 'good')
+      Comment.create!(author: users[0], post: posts[0], text: 'Very nice')
+      Comment.create!(author: users[2], post: posts[0], text: 'good')
       visit user_post_path(users[0], posts[0])
 
       posts[0].comments.each do |comment|
