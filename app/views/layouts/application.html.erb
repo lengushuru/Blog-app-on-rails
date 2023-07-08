@@ -13,6 +13,11 @@
   <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <div style="display: flex; justify-content: flex-end; margin-right: 10px;">
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
